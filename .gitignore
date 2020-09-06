@@ -1,14 +1,9 @@
-*.gz
-train-labels-idx1-ubyte
-*.npz
-train-images-idx3-ubyte
 bin/
 lib/
 share/
 include/
-handwrittenmathsymbols/
-rhme/tratamento/datasets_originais
 *.pyc
 dist/
 pyvenv.cfg
-rhme.egg-info/
+mathreader.egg-info/
+build/
