@@ -1,0 +1,7 @@
+==========================================================
+MathReader
+==========================================================
+API for handwritten mathematical expressions recognition
+---------------------------------------------------------
+
+GitHub `MathReader <https://github.com/carolreis/mathreader>`_.

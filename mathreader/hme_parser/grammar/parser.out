@@ -1,0 +1,1669 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> GL
+Rule 1     GL -> EL
+Rule 2     EL -> ER EQ ER
+Rule 3     EL -> ER NEQ ER
+Rule 4     EL -> ER EQ
+Rule 5     EL -> ER NEQ
+Rule 6     EL -> ER
+Rule 7     ER -> T PLUS ER
+Rule 8     ER -> T MIN ER
+Rule 9     ER -> T
+Rule 10    T -> SUBSC CDOT T
+Rule 11    T -> SUBSC
+Rule 12    SUBSC -> PW SUB SUBSC
+Rule 13    SUBSC -> PW
+Rule 14    PW -> FR POW PW
+Rule 15    PW -> FR
+Rule 16    FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+Rule 17    FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+Rule 18    FR -> S
+Rule 19    S -> SQRT OPENC ER CLOSEDC
+Rule 20    S -> S SQRT OPENC ER CLOSEDC
+Rule 21    S -> S F
+Rule 22    S -> PLUS F
+Rule 23    S -> MIN F
+Rule 24    S -> F
+Rule 25    F -> NUMBER
+Rule 26    F -> VAR
+Rule 27    F -> P
+Rule 28    P -> OPENP ER CLOSEDP
+Rule 29    P -> C
+Rule 30    C -> OPENCO ER CLOSEDCO
+Rule 31    C -> B
+Rule 32    B -> OPENC ER CLOSEDC
+
+Terminals, with rules where they appear
+
+CDOT                 : 10
+CLOSEDC              : 16 16 17 17 19 20 32
+CLOSEDCO             : 30
+CLOSEDP              : 28
+EQ                   : 2 4
+LFRAC                : 16 17
+MIN                  : 8 23
+NEQ                  : 3 5
+NUMBER               : 25
+OPENC                : 16 16 17 17 19 20 32
+OPENCO               : 30
+OPENP                : 28
+PLUS                 : 7 22
+POW                  : 14
+SQRT                 : 19 20
+SUB                  : 12
+VAR                  : 26
+error                : 
+
+Nonterminals, with rules where they appear
+
+B                    : 31
+C                    : 29
+EL                   : 1
+ER                   : 2 2 3 3 4 5 6 7 8 16 16 17 17 19 20 28 30 32
+F                    : 21 22 23 24
+FR                   : 14 15
+GL                   : 0
+P                    : 27
+PW                   : 12 13 14
+S                    : 17 18 20 21
+SUBSC                : 10 11 12
+T                    : 7 8 9 10
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . GL
+    (1) GL -> . EL
+    (2) EL -> . ER EQ ER
+    (3) EL -> . ER NEQ ER
+    (4) EL -> . ER EQ
+    (5) EL -> . ER NEQ
+    (6) EL -> . ER
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    GL                             shift and go to state 1
+    EL                             shift and go to state 2
+    ER                             shift and go to state 3
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 1
+
+    (0) S' -> GL .
+
+
+
+state 2
+
+    (1) GL -> EL .
+
+    $end            reduce using rule 1 (GL -> EL .)
+
+
+state 3
+
+    (2) EL -> ER . EQ ER
+    (3) EL -> ER . NEQ ER
+    (4) EL -> ER . EQ
+    (5) EL -> ER . NEQ
+    (6) EL -> ER .
+
+    EQ              shift and go to state 22
+    NEQ             shift and go to state 23
+    $end            reduce using rule 6 (EL -> ER .)
+
+
+state 4
+
+    (7) ER -> T . PLUS ER
+    (8) ER -> T . MIN ER
+    (9) ER -> T .
+
+    PLUS            shift and go to state 24
+    MIN             shift and go to state 25
+    EQ              reduce using rule 9 (ER -> T .)
+    NEQ             reduce using rule 9 (ER -> T .)
+    $end            reduce using rule 9 (ER -> T .)
+    CLOSEDC         reduce using rule 9 (ER -> T .)
+    CLOSEDP         reduce using rule 9 (ER -> T .)
+    CLOSEDCO        reduce using rule 9 (ER -> T .)
+
+
+state 5
+
+    (22) S -> PLUS . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    F                              shift and go to state 26
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 6
+
+    (23) S -> MIN . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    F                              shift and go to state 27
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 7
+
+    (10) T -> SUBSC . CDOT T
+    (11) T -> SUBSC .
+
+    CDOT            shift and go to state 28
+    PLUS            reduce using rule 11 (T -> SUBSC .)
+    MIN             reduce using rule 11 (T -> SUBSC .)
+    EQ              reduce using rule 11 (T -> SUBSC .)
+    NEQ             reduce using rule 11 (T -> SUBSC .)
+    $end            reduce using rule 11 (T -> SUBSC .)
+    CLOSEDC         reduce using rule 11 (T -> SUBSC .)
+    CLOSEDP         reduce using rule 11 (T -> SUBSC .)
+    CLOSEDCO        reduce using rule 11 (T -> SUBSC .)
+
+
+state 8
+
+    (12) SUBSC -> PW . SUB SUBSC
+    (13) SUBSC -> PW .
+
+    SUB             shift and go to state 29
+    CDOT            reduce using rule 13 (SUBSC -> PW .)
+    PLUS            reduce using rule 13 (SUBSC -> PW .)
+    MIN             reduce using rule 13 (SUBSC -> PW .)
+    EQ              reduce using rule 13 (SUBSC -> PW .)
+    NEQ             reduce using rule 13 (SUBSC -> PW .)
+    $end            reduce using rule 13 (SUBSC -> PW .)
+    CLOSEDC         reduce using rule 13 (SUBSC -> PW .)
+    CLOSEDP         reduce using rule 13 (SUBSC -> PW .)
+    CLOSEDCO        reduce using rule 13 (SUBSC -> PW .)
+
+
+state 9
+
+    (14) PW -> FR . POW PW
+    (15) PW -> FR .
+
+    POW             shift and go to state 30
+    SUB             reduce using rule 15 (PW -> FR .)
+    CDOT            reduce using rule 15 (PW -> FR .)
+    PLUS            reduce using rule 15 (PW -> FR .)
+    MIN             reduce using rule 15 (PW -> FR .)
+    EQ              reduce using rule 15 (PW -> FR .)
+    NEQ             reduce using rule 15 (PW -> FR .)
+    $end            reduce using rule 15 (PW -> FR .)
+    CLOSEDC         reduce using rule 15 (PW -> FR .)
+    CLOSEDP         reduce using rule 15 (PW -> FR .)
+    CLOSEDCO        reduce using rule 15 (PW -> FR .)
+
+
+state 10
+
+    (16) FR -> LFRAC . OPENC ER CLOSEDC OPENC ER CLOSEDC
+
+    OPENC           shift and go to state 31
+
+
+state 11
+
+    (32) B -> OPENC . ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 32
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 12
+
+    (17) FR -> S . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> S .
+    (20) S -> S . SQRT OPENC ER CLOSEDC
+    (21) S -> S . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 33
+    POW             reduce using rule 18 (FR -> S .)
+    SUB             reduce using rule 18 (FR -> S .)
+    CDOT            reduce using rule 18 (FR -> S .)
+    PLUS            reduce using rule 18 (FR -> S .)
+    MIN             reduce using rule 18 (FR -> S .)
+    EQ              reduce using rule 18 (FR -> S .)
+    NEQ             reduce using rule 18 (FR -> S .)
+    $end            reduce using rule 18 (FR -> S .)
+    CLOSEDC         reduce using rule 18 (FR -> S .)
+    CLOSEDP         reduce using rule 18 (FR -> S .)
+    CLOSEDCO        reduce using rule 18 (FR -> S .)
+    SQRT            shift and go to state 34
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    F                              shift and go to state 35
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 13
+
+    (19) S -> SQRT . OPENC ER CLOSEDC
+
+    OPENC           shift and go to state 36
+
+
+state 14
+
+    (24) S -> F .
+
+    LFRAC           reduce using rule 24 (S -> F .)
+    SQRT            reduce using rule 24 (S -> F .)
+    NUMBER          reduce using rule 24 (S -> F .)
+    VAR             reduce using rule 24 (S -> F .)
+    OPENP           reduce using rule 24 (S -> F .)
+    OPENCO          reduce using rule 24 (S -> F .)
+    OPENC           reduce using rule 24 (S -> F .)
+    POW             reduce using rule 24 (S -> F .)
+    SUB             reduce using rule 24 (S -> F .)
+    CDOT            reduce using rule 24 (S -> F .)
+    PLUS            reduce using rule 24 (S -> F .)
+    MIN             reduce using rule 24 (S -> F .)
+    EQ              reduce using rule 24 (S -> F .)
+    NEQ             reduce using rule 24 (S -> F .)
+    $end            reduce using rule 24 (S -> F .)
+    CLOSEDC         reduce using rule 24 (S -> F .)
+    CLOSEDP         reduce using rule 24 (S -> F .)
+    CLOSEDCO        reduce using rule 24 (S -> F .)
+
+
+state 15
+
+    (25) F -> NUMBER .
+
+    LFRAC           reduce using rule 25 (F -> NUMBER .)
+    SQRT            reduce using rule 25 (F -> NUMBER .)
+    NUMBER          reduce using rule 25 (F -> NUMBER .)
+    VAR             reduce using rule 25 (F -> NUMBER .)
+    OPENP           reduce using rule 25 (F -> NUMBER .)
+    OPENCO          reduce using rule 25 (F -> NUMBER .)
+    OPENC           reduce using rule 25 (F -> NUMBER .)
+    POW             reduce using rule 25 (F -> NUMBER .)
+    SUB             reduce using rule 25 (F -> NUMBER .)
+    CDOT            reduce using rule 25 (F -> NUMBER .)
+    PLUS            reduce using rule 25 (F -> NUMBER .)
+    MIN             reduce using rule 25 (F -> NUMBER .)
+    EQ              reduce using rule 25 (F -> NUMBER .)
+    NEQ             reduce using rule 25 (F -> NUMBER .)
+    $end            reduce using rule 25 (F -> NUMBER .)
+    CLOSEDC         reduce using rule 25 (F -> NUMBER .)
+    CLOSEDP         reduce using rule 25 (F -> NUMBER .)
+    CLOSEDCO        reduce using rule 25 (F -> NUMBER .)
+
+
+state 16
+
+    (26) F -> VAR .
+
+    LFRAC           reduce using rule 26 (F -> VAR .)
+    SQRT            reduce using rule 26 (F -> VAR .)
+    NUMBER          reduce using rule 26 (F -> VAR .)
+    VAR             reduce using rule 26 (F -> VAR .)
+    OPENP           reduce using rule 26 (F -> VAR .)
+    OPENCO          reduce using rule 26 (F -> VAR .)
+    OPENC           reduce using rule 26 (F -> VAR .)
+    POW             reduce using rule 26 (F -> VAR .)
+    SUB             reduce using rule 26 (F -> VAR .)
+    CDOT            reduce using rule 26 (F -> VAR .)
+    PLUS            reduce using rule 26 (F -> VAR .)
+    MIN             reduce using rule 26 (F -> VAR .)
+    EQ              reduce using rule 26 (F -> VAR .)
+    NEQ             reduce using rule 26 (F -> VAR .)
+    $end            reduce using rule 26 (F -> VAR .)
+    CLOSEDC         reduce using rule 26 (F -> VAR .)
+    CLOSEDP         reduce using rule 26 (F -> VAR .)
+    CLOSEDCO        reduce using rule 26 (F -> VAR .)
+
+
+state 17
+
+    (27) F -> P .
+
+    LFRAC           reduce using rule 27 (F -> P .)
+    SQRT            reduce using rule 27 (F -> P .)
+    NUMBER          reduce using rule 27 (F -> P .)
+    VAR             reduce using rule 27 (F -> P .)
+    OPENP           reduce using rule 27 (F -> P .)
+    OPENCO          reduce using rule 27 (F -> P .)
+    OPENC           reduce using rule 27 (F -> P .)
+    POW             reduce using rule 27 (F -> P .)
+    SUB             reduce using rule 27 (F -> P .)
+    CDOT            reduce using rule 27 (F -> P .)
+    PLUS            reduce using rule 27 (F -> P .)
+    MIN             reduce using rule 27 (F -> P .)
+    EQ              reduce using rule 27 (F -> P .)
+    NEQ             reduce using rule 27 (F -> P .)
+    $end            reduce using rule 27 (F -> P .)
+    CLOSEDC         reduce using rule 27 (F -> P .)
+    CLOSEDP         reduce using rule 27 (F -> P .)
+    CLOSEDCO        reduce using rule 27 (F -> P .)
+
+
+state 18
+
+    (28) P -> OPENP . ER CLOSEDP
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 37
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 19
+
+    (29) P -> C .
+
+    LFRAC           reduce using rule 29 (P -> C .)
+    SQRT            reduce using rule 29 (P -> C .)
+    NUMBER          reduce using rule 29 (P -> C .)
+    VAR             reduce using rule 29 (P -> C .)
+    OPENP           reduce using rule 29 (P -> C .)
+    OPENCO          reduce using rule 29 (P -> C .)
+    OPENC           reduce using rule 29 (P -> C .)
+    POW             reduce using rule 29 (P -> C .)
+    SUB             reduce using rule 29 (P -> C .)
+    CDOT            reduce using rule 29 (P -> C .)
+    PLUS            reduce using rule 29 (P -> C .)
+    MIN             reduce using rule 29 (P -> C .)
+    EQ              reduce using rule 29 (P -> C .)
+    NEQ             reduce using rule 29 (P -> C .)
+    $end            reduce using rule 29 (P -> C .)
+    CLOSEDC         reduce using rule 29 (P -> C .)
+    CLOSEDP         reduce using rule 29 (P -> C .)
+    CLOSEDCO        reduce using rule 29 (P -> C .)
+
+
+state 20
+
+    (30) C -> OPENCO . ER CLOSEDCO
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 38
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 21
+
+    (31) C -> B .
+
+    LFRAC           reduce using rule 31 (C -> B .)
+    SQRT            reduce using rule 31 (C -> B .)
+    NUMBER          reduce using rule 31 (C -> B .)
+    VAR             reduce using rule 31 (C -> B .)
+    OPENP           reduce using rule 31 (C -> B .)
+    OPENCO          reduce using rule 31 (C -> B .)
+    OPENC           reduce using rule 31 (C -> B .)
+    POW             reduce using rule 31 (C -> B .)
+    SUB             reduce using rule 31 (C -> B .)
+    CDOT            reduce using rule 31 (C -> B .)
+    PLUS            reduce using rule 31 (C -> B .)
+    MIN             reduce using rule 31 (C -> B .)
+    EQ              reduce using rule 31 (C -> B .)
+    NEQ             reduce using rule 31 (C -> B .)
+    $end            reduce using rule 31 (C -> B .)
+    CLOSEDC         reduce using rule 31 (C -> B .)
+    CLOSEDP         reduce using rule 31 (C -> B .)
+    CLOSEDCO        reduce using rule 31 (C -> B .)
+
+
+state 22
+
+    (2) EL -> ER EQ . ER
+    (4) EL -> ER EQ .
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    $end            reduce using rule 4 (EL -> ER EQ .)
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 39
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 23
+
+    (3) EL -> ER NEQ . ER
+    (5) EL -> ER NEQ .
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    $end            reduce using rule 5 (EL -> ER NEQ .)
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 40
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 24
+
+    (7) ER -> T PLUS . ER
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    T                              shift and go to state 4
+    ER                             shift and go to state 41
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 25
+
+    (8) ER -> T MIN . ER
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    T                              shift and go to state 4
+    ER                             shift and go to state 42
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 26
+
+    (22) S -> PLUS F .
+
+    LFRAC           reduce using rule 22 (S -> PLUS F .)
+    SQRT            reduce using rule 22 (S -> PLUS F .)
+    NUMBER          reduce using rule 22 (S -> PLUS F .)
+    VAR             reduce using rule 22 (S -> PLUS F .)
+    OPENP           reduce using rule 22 (S -> PLUS F .)
+    OPENCO          reduce using rule 22 (S -> PLUS F .)
+    OPENC           reduce using rule 22 (S -> PLUS F .)
+    POW             reduce using rule 22 (S -> PLUS F .)
+    SUB             reduce using rule 22 (S -> PLUS F .)
+    CDOT            reduce using rule 22 (S -> PLUS F .)
+    PLUS            reduce using rule 22 (S -> PLUS F .)
+    MIN             reduce using rule 22 (S -> PLUS F .)
+    EQ              reduce using rule 22 (S -> PLUS F .)
+    NEQ             reduce using rule 22 (S -> PLUS F .)
+    $end            reduce using rule 22 (S -> PLUS F .)
+    CLOSEDC         reduce using rule 22 (S -> PLUS F .)
+    CLOSEDP         reduce using rule 22 (S -> PLUS F .)
+    CLOSEDCO        reduce using rule 22 (S -> PLUS F .)
+
+
+state 27
+
+    (23) S -> MIN F .
+
+    LFRAC           reduce using rule 23 (S -> MIN F .)
+    SQRT            reduce using rule 23 (S -> MIN F .)
+    NUMBER          reduce using rule 23 (S -> MIN F .)
+    VAR             reduce using rule 23 (S -> MIN F .)
+    OPENP           reduce using rule 23 (S -> MIN F .)
+    OPENCO          reduce using rule 23 (S -> MIN F .)
+    OPENC           reduce using rule 23 (S -> MIN F .)
+    POW             reduce using rule 23 (S -> MIN F .)
+    SUB             reduce using rule 23 (S -> MIN F .)
+    CDOT            reduce using rule 23 (S -> MIN F .)
+    PLUS            reduce using rule 23 (S -> MIN F .)
+    MIN             reduce using rule 23 (S -> MIN F .)
+    EQ              reduce using rule 23 (S -> MIN F .)
+    NEQ             reduce using rule 23 (S -> MIN F .)
+    $end            reduce using rule 23 (S -> MIN F .)
+    CLOSEDC         reduce using rule 23 (S -> MIN F .)
+    CLOSEDP         reduce using rule 23 (S -> MIN F .)
+    CLOSEDCO        reduce using rule 23 (S -> MIN F .)
+
+
+state 28
+
+    (10) T -> SUBSC CDOT . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    SUBSC                          shift and go to state 7
+    T                              shift and go to state 43
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 29
+
+    (12) SUBSC -> PW SUB . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    PW                             shift and go to state 8
+    SUBSC                          shift and go to state 44
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 30
+
+    (14) PW -> FR POW . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    FR                             shift and go to state 9
+    PW                             shift and go to state 45
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 31
+
+    (16) FR -> LFRAC OPENC . ER CLOSEDC OPENC ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 46
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 32
+
+    (32) B -> OPENC ER . CLOSEDC
+
+    CLOSEDC         shift and go to state 47
+
+
+state 33
+
+    (17) FR -> S LFRAC . OPENC ER CLOSEDC OPENC ER CLOSEDC
+
+    OPENC           shift and go to state 48
+
+
+state 34
+
+    (20) S -> S SQRT . OPENC ER CLOSEDC
+
+    OPENC           shift and go to state 49
+
+
+state 35
+
+    (21) S -> S F .
+
+    LFRAC           reduce using rule 21 (S -> S F .)
+    SQRT            reduce using rule 21 (S -> S F .)
+    NUMBER          reduce using rule 21 (S -> S F .)
+    VAR             reduce using rule 21 (S -> S F .)
+    OPENP           reduce using rule 21 (S -> S F .)
+    OPENCO          reduce using rule 21 (S -> S F .)
+    OPENC           reduce using rule 21 (S -> S F .)
+    POW             reduce using rule 21 (S -> S F .)
+    SUB             reduce using rule 21 (S -> S F .)
+    CDOT            reduce using rule 21 (S -> S F .)
+    PLUS            reduce using rule 21 (S -> S F .)
+    MIN             reduce using rule 21 (S -> S F .)
+    EQ              reduce using rule 21 (S -> S F .)
+    NEQ             reduce using rule 21 (S -> S F .)
+    $end            reduce using rule 21 (S -> S F .)
+    CLOSEDC         reduce using rule 21 (S -> S F .)
+    CLOSEDP         reduce using rule 21 (S -> S F .)
+    CLOSEDCO        reduce using rule 21 (S -> S F .)
+
+
+state 36
+
+    (19) S -> SQRT OPENC . ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 50
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 37
+
+    (28) P -> OPENP ER . CLOSEDP
+
+    CLOSEDP         shift and go to state 51
+
+
+state 38
+
+    (30) C -> OPENCO ER . CLOSEDCO
+
+    CLOSEDCO        shift and go to state 52
+
+
+state 39
+
+    (2) EL -> ER EQ ER .
+
+    $end            reduce using rule 2 (EL -> ER EQ ER .)
+
+
+state 40
+
+    (3) EL -> ER NEQ ER .
+
+    $end            reduce using rule 3 (EL -> ER NEQ ER .)
+
+
+state 41
+
+    (7) ER -> T PLUS ER .
+
+    EQ              reduce using rule 7 (ER -> T PLUS ER .)
+    NEQ             reduce using rule 7 (ER -> T PLUS ER .)
+    $end            reduce using rule 7 (ER -> T PLUS ER .)
+    CLOSEDC         reduce using rule 7 (ER -> T PLUS ER .)
+    CLOSEDP         reduce using rule 7 (ER -> T PLUS ER .)
+    CLOSEDCO        reduce using rule 7 (ER -> T PLUS ER .)
+
+
+state 42
+
+    (8) ER -> T MIN ER .
+
+    EQ              reduce using rule 8 (ER -> T MIN ER .)
+    NEQ             reduce using rule 8 (ER -> T MIN ER .)
+    $end            reduce using rule 8 (ER -> T MIN ER .)
+    CLOSEDC         reduce using rule 8 (ER -> T MIN ER .)
+    CLOSEDP         reduce using rule 8 (ER -> T MIN ER .)
+    CLOSEDCO        reduce using rule 8 (ER -> T MIN ER .)
+
+
+state 43
+
+    (10) T -> SUBSC CDOT T .
+
+    PLUS            reduce using rule 10 (T -> SUBSC CDOT T .)
+    MIN             reduce using rule 10 (T -> SUBSC CDOT T .)
+    EQ              reduce using rule 10 (T -> SUBSC CDOT T .)
+    NEQ             reduce using rule 10 (T -> SUBSC CDOT T .)
+    $end            reduce using rule 10 (T -> SUBSC CDOT T .)
+    CLOSEDC         reduce using rule 10 (T -> SUBSC CDOT T .)
+    CLOSEDP         reduce using rule 10 (T -> SUBSC CDOT T .)
+    CLOSEDCO        reduce using rule 10 (T -> SUBSC CDOT T .)
+
+
+state 44
+
+    (12) SUBSC -> PW SUB SUBSC .
+
+    CDOT            reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    PLUS            reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    MIN             reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    EQ              reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    NEQ             reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    $end            reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    CLOSEDC         reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    CLOSEDP         reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+    CLOSEDCO        reduce using rule 12 (SUBSC -> PW SUB SUBSC .)
+
+
+state 45
+
+    (14) PW -> FR POW PW .
+
+    SUB             reduce using rule 14 (PW -> FR POW PW .)
+    CDOT            reduce using rule 14 (PW -> FR POW PW .)
+    PLUS            reduce using rule 14 (PW -> FR POW PW .)
+    MIN             reduce using rule 14 (PW -> FR POW PW .)
+    EQ              reduce using rule 14 (PW -> FR POW PW .)
+    NEQ             reduce using rule 14 (PW -> FR POW PW .)
+    $end            reduce using rule 14 (PW -> FR POW PW .)
+    CLOSEDC         reduce using rule 14 (PW -> FR POW PW .)
+    CLOSEDP         reduce using rule 14 (PW -> FR POW PW .)
+    CLOSEDCO        reduce using rule 14 (PW -> FR POW PW .)
+
+
+state 46
+
+    (16) FR -> LFRAC OPENC ER . CLOSEDC OPENC ER CLOSEDC
+
+    CLOSEDC         shift and go to state 53
+
+
+state 47
+
+    (32) B -> OPENC ER CLOSEDC .
+
+    LFRAC           reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    SQRT            reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    NUMBER          reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    VAR             reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    OPENP           reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    OPENCO          reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    OPENC           reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    POW             reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    SUB             reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    CDOT            reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    PLUS            reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    MIN             reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    EQ              reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    NEQ             reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    $end            reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    CLOSEDC         reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    CLOSEDP         reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+    CLOSEDCO        reduce using rule 32 (B -> OPENC ER CLOSEDC .)
+
+
+state 48
+
+    (17) FR -> S LFRAC OPENC . ER CLOSEDC OPENC ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    S                              shift and go to state 12
+    ER                             shift and go to state 54
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 49
+
+    (20) S -> S SQRT OPENC . ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    S                              shift and go to state 12
+    ER                             shift and go to state 55
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 50
+
+    (19) S -> SQRT OPENC ER . CLOSEDC
+
+    CLOSEDC         shift and go to state 56
+
+
+state 51
+
+    (28) P -> OPENP ER CLOSEDP .
+
+    LFRAC           reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    SQRT            reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    NUMBER          reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    VAR             reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    OPENP           reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    OPENCO          reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    OPENC           reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    POW             reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    SUB             reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    CDOT            reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    PLUS            reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    MIN             reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    EQ              reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    NEQ             reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    $end            reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    CLOSEDC         reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    CLOSEDP         reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+    CLOSEDCO        reduce using rule 28 (P -> OPENP ER CLOSEDP .)
+
+
+state 52
+
+    (30) C -> OPENCO ER CLOSEDCO .
+
+    LFRAC           reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    SQRT            reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    NUMBER          reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    VAR             reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    OPENP           reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    OPENCO          reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    OPENC           reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    POW             reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    SUB             reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    CDOT            reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    PLUS            reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    MIN             reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    EQ              reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    NEQ             reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    $end            reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    CLOSEDC         reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    CLOSEDP         reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+    CLOSEDCO        reduce using rule 30 (C -> OPENCO ER CLOSEDCO .)
+
+
+state 53
+
+    (16) FR -> LFRAC OPENC ER CLOSEDC . OPENC ER CLOSEDC
+
+    OPENC           shift and go to state 57
+
+
+state 54
+
+    (17) FR -> S LFRAC OPENC ER . CLOSEDC OPENC ER CLOSEDC
+
+    CLOSEDC         shift and go to state 58
+
+
+state 55
+
+    (20) S -> S SQRT OPENC ER . CLOSEDC
+
+    CLOSEDC         shift and go to state 59
+
+
+state 56
+
+    (19) S -> SQRT OPENC ER CLOSEDC .
+
+    LFRAC           reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    SQRT            reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    NUMBER          reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    VAR             reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    OPENP           reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    OPENCO          reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    OPENC           reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    POW             reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    SUB             reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    CDOT            reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    PLUS            reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    MIN             reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    EQ              reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    NEQ             reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    $end            reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    CLOSEDC         reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    CLOSEDP         reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+    CLOSEDCO        reduce using rule 19 (S -> SQRT OPENC ER CLOSEDC .)
+
+
+state 57
+
+    (16) FR -> LFRAC OPENC ER CLOSEDC OPENC . ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    ER                             shift and go to state 60
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    S                              shift and go to state 12
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 58
+
+    (17) FR -> S LFRAC OPENC ER CLOSEDC . OPENC ER CLOSEDC
+
+    OPENC           shift and go to state 61
+
+
+state 59
+
+    (20) S -> S SQRT OPENC ER CLOSEDC .
+
+    LFRAC           reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    SQRT            reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    NUMBER          reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    VAR             reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    OPENP           reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    OPENCO          reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    OPENC           reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    POW             reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    SUB             reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    CDOT            reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    PLUS            reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    MIN             reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    EQ              reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    NEQ             reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    $end            reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    CLOSEDC         reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    CLOSEDP         reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+    CLOSEDCO        reduce using rule 20 (S -> S SQRT OPENC ER CLOSEDC .)
+
+
+state 60
+
+    (16) FR -> LFRAC OPENC ER CLOSEDC OPENC ER . CLOSEDC
+
+    CLOSEDC         shift and go to state 62
+
+
+state 61
+
+    (17) FR -> S LFRAC OPENC ER CLOSEDC OPENC . ER CLOSEDC
+    (7) ER -> . T PLUS ER
+    (8) ER -> . T MIN ER
+    (9) ER -> . T
+    (10) T -> . SUBSC CDOT T
+    (11) T -> . SUBSC
+    (12) SUBSC -> . PW SUB SUBSC
+    (13) SUBSC -> . PW
+    (14) PW -> . FR POW PW
+    (15) PW -> . FR
+    (16) FR -> . LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (17) FR -> . S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC
+    (18) FR -> . S
+    (19) S -> . SQRT OPENC ER CLOSEDC
+    (20) S -> . S SQRT OPENC ER CLOSEDC
+    (21) S -> . S F
+    (22) S -> . PLUS F
+    (23) S -> . MIN F
+    (24) S -> . F
+    (25) F -> . NUMBER
+    (26) F -> . VAR
+    (27) F -> . P
+    (28) P -> . OPENP ER CLOSEDP
+    (29) P -> . C
+    (30) C -> . OPENCO ER CLOSEDCO
+    (31) C -> . B
+    (32) B -> . OPENC ER CLOSEDC
+
+    LFRAC           shift and go to state 10
+    SQRT            shift and go to state 13
+    PLUS            shift and go to state 5
+    MIN             shift and go to state 6
+    NUMBER          shift and go to state 15
+    VAR             shift and go to state 16
+    OPENP           shift and go to state 18
+    OPENCO          shift and go to state 20
+    OPENC           shift and go to state 11
+
+    S                              shift and go to state 12
+    ER                             shift and go to state 63
+    T                              shift and go to state 4
+    SUBSC                          shift and go to state 7
+    PW                             shift and go to state 8
+    FR                             shift and go to state 9
+    F                              shift and go to state 14
+    P                              shift and go to state 17
+    C                              shift and go to state 19
+    B                              shift and go to state 21
+
+state 62
+
+    (16) FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .
+
+    POW             reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    SUB             reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CDOT            reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    PLUS            reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    MIN             reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    EQ              reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    NEQ             reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    $end            reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CLOSEDC         reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CLOSEDP         reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CLOSEDCO        reduce using rule 16 (FR -> LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+
+
+state 63
+
+    (17) FR -> S LFRAC OPENC ER CLOSEDC OPENC ER . CLOSEDC
+
+    CLOSEDC         shift and go to state 64
+
+
+state 64
+
+    (17) FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .
+
+    POW             reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    SUB             reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CDOT            reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    PLUS            reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    MIN             reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    EQ              reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    NEQ             reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    $end            reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CLOSEDC         reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CLOSEDP         reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+    CLOSEDCO        reduce using rule 17 (FR -> S LFRAC OPENC ER CLOSEDC OPENC ER CLOSEDC .)
+

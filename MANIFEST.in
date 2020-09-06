@@ -1,0 +1,6 @@
+include mathreader/docs/config/config.json
+include mathreader/docs/config/config_all.json
+recursive-include mathreader/images/ *
+recursive-include mathreader/ann_models/charts *
+recursive-include mathreader/ann_models/model *
+recursive-include mathreader/ann_models/history *
