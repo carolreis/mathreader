@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from rhme.config import Configuration
-from rhme import helpers
+from mathreader.config import Configuration
+from mathreader import helpers
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 import numpy as np
@@ -18,7 +18,7 @@ def fit(image):
     labels = helpers.get_labels()
 
     try:
-        model = load_model(config.package_path + '/ann_models/model/model_11-07-2020_23-14-47.h5')
+        model = load_model(config.package_path + '/ann_models/model/model_11-07-2020_23-54-57.h5')
 
         prediction = model.predict(image)
         index = np.argmax(prediction)

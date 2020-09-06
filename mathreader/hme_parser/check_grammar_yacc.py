@@ -1,9 +1,9 @@
-from rhme.hme_parser.grammar import yacc as yacc
-from rhme.hme_parser.grammar import lex as lex
-from rhme.hme_parser import correct_grammar as correct_grammar
-from rhme.hme_parser import check_grammar_lex as check_grammar_lex
-from rhme.helpers.exceptions import GrammarError, LexicalError, SintaticError
-from rhme import helpers
+from mathreader.hme_parser.grammar import yacc as yacc
+from mathreader.hme_parser.grammar import lex as lex
+from mathreader.hme_parser import correct_grammar as correct_grammar
+from mathreader.hme_parser import check_grammar_lex as check_grammar_lex
+from mathreader.helpers.exceptions import GrammarError, LexicalError, SintaticError
+from mathreader import helpers
 import numpy as np
 
 

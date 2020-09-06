@@ -1,5 +1,5 @@
-from rhme.hme_parser.grammar import lex
-from rhme.hme_parser.grammar.lex import tokens
+from mathreader.hme_parser.grammar import lex
+from mathreader.hme_parser.grammar.lex import tokens
 import ply.yacc as yacc
 
 def LatexParse(latex):

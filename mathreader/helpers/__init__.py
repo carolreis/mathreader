@@ -1,4 +1,4 @@
-from rhme.config import Configuration
+from mathreader.config import Configuration
 import os
 import cv2 as cv
 import idx2numpy

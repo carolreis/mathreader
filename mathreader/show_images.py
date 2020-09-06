@@ -1,4 +1,4 @@
-from rhme.config import Configuration
+from mathreader.config import Configuration
 import numpy as np
 import cv2
 import os

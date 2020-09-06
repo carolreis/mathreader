@@ -1,5 +1,5 @@
-from rhme.image_processing import preprocessing as preprocessing
-from rhme import helpers
+from mathreader.image_processing import preprocessing as preprocessing
+from mathreader import helpers
 import numpy as np
 import cv2
 import imutils
@@ -73,7 +73,6 @@ class ImagePostprocessing:
                         symbol['h'] = ymax - ymin
                         symbol['centroid'] = [xmin + (xmax-xmin) / 2, ymin + (ymax-ymin) / 2]
 
-                        helpers.show_image(resized)
                         del xmin_sorted[candidate_index]
 
                     else:

@@ -1,11 +1,11 @@
 import re
 import json
 import numpy as np
-from rhme.helpers import data_structures as DS
-from rhme.helpers.exceptions import GrammarError, LexicalError, SintaticError
-from rhme.hme_parser import check_grammar as cg
-from rhme.hme_parser import structural_analysis as sa
-from rhme import helpers
+from mathreader.helpers import data_structures as DS
+from mathreader.helpers.exceptions import GrammarError, LexicalError, SintaticError
+from mathreader.hme_parser import check_grammar as cg
+from mathreader.hme_parser import structural_analysis as sa
+from mathreader import helpers
 
 
 class Parser:

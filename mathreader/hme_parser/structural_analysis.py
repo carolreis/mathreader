@@ -1,6 +1,6 @@
 
-from rhme.helpers import data_structures as DS
-from rhme import helpers
+from mathreader.helpers import data_structures as DS
+from mathreader import helpers
 import re
 import json
 import numpy as np

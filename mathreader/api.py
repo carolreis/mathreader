@@ -1,7 +1,7 @@
-from rhme import helpers
-from rhme.hme_parser import parser as parser
-from rhme.recognize import *
-from rhme.config import Configuration as config
+from mathreader import helpers
+from mathreader.hme_parser import parser as parser
+from mathreader.recognize import *
+from mathreader.config import Configuration as config
 import numpy as np
 import cv2
 import base64
@@ -64,7 +64,7 @@ class HME_Recognizer:
 
             elif data_type == 'byte':
                 im_arr = np.frombuffer(image, dtype=np.uint8)
-                img = cv2.imdecode(im_arr, flags=IMREAD_COLOR)
+                img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
 
             else:
                 raise Exception('Wrong file format. Should be: \

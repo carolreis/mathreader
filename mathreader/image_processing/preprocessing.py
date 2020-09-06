@@ -1,4 +1,4 @@
-from rhme import helpers
+from mathreader import helpers
 import numpy as np
 import cv2
 import imutils
@@ -233,10 +233,11 @@ class ImagePreprocessing:
                 resized = self.resize(cropped)
 
                 # Test - It was not here during validation
-                # binarized = self.binarization(resized)
-                # result_image = self._255_to_1(binarized)
+                binarized = self.binarization(resized)
+                result_image = self._255_to_1(binarized)
 
-                result_image = self._255_to_1(resized)
+                # result_image = self._255_to_1(resized)
+                helpers.show_image(result_image)
 
                 attributes = {
                     'index': i,

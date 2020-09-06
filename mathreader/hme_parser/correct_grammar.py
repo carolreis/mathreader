@@ -1,7 +1,7 @@
 import numpy as np
-from rhme import helpers
-from rhme.hme_parser.grammar import lex as lex
-from rhme.hme_parser.grammar import yacc as yacc
+from mathreader import helpers
+from mathreader.hme_parser.grammar import lex as lex
+from mathreader.hme_parser.grammar import yacc as yacc
 
 helpers_labels = helpers.get_labels()
 labels = helpers_labels['labels_parser']

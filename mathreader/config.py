@@ -1,9 +1,9 @@
-import rhme
+import mathreader
 import json
 
 
 class Configuration:
-    package_path = rhme.__path__[0]
+    package_path = mathreader.__path__[0]
     config_path = package_path + '/docs/config/config.json'
 
     def get_configs(self):

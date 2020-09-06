@@ -1,7 +1,7 @@
-from rhme.classification import classification as classification
-from rhme.image_processing import preprocessing as preprocessing
-from rhme.image_processing import postprocessing as postprocessing
-from rhme import helpers
+from mathreader.classification import classification as classification
+from mathreader.image_processing import preprocessing as preprocessing
+from mathreader.image_processing import postprocessing as postprocessing
+from mathreader import helpers
 import os
 import re
 import json
@@ -40,7 +40,6 @@ class Recognize:
 
         helpers.debug("[recognize.py] to_recognize | \
             Showing the image of the expression...\n")
-        helpers.show_image(self.image)
 
         helpers.debug("[recognize.py] to_recognize | \
             Starting image preprocessing...\n")
@@ -49,7 +48,6 @@ class Recognize:
 
         helpers.debug("[recognize.py] to_recognize | \
             Showing preprocessed image\n")
-        helpers.show_image(normalized_image)
 
         helpers.debug("[recognize.py] to_recognize | \
             Image preprocessing finished.\n")
@@ -61,9 +59,10 @@ class Recognize:
             for s in segmentation:
 
                 helpers.debug('... segmentation ...')
+                helpers.debug('... recognize ...')
+                # retirar depois
                 helpers.show_image(s['image'])
 
-                helpers.debug('... recognize ...')
                 reconhecer = self.__recognize(s['image'])
                 reconhecer['label'] = str(reconhecer['label'])
 
@@ -73,6 +72,9 @@ class Recognize:
                 symbol_prediction = {
                     'identity': labels[s['label']]
                 }
+
+                # retirar depois
+                print('LABEL: ', labels[s['label']])
 
                 symbol_prediction.update(reconhecer)
                 self.prediction.append(symbol_prediction)

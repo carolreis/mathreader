@@ -1,6 +1,6 @@
-from rhme.api import *
-from rhme.config import Configuration
-from rhme.helpers.exceptions import *
+from mathreader.api import *
+from mathreader.config import Configuration
+from mathreader.helpers.exceptions import *
 import base64
 import numpy as np
 import cv2

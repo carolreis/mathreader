@@ -1,7 +1,7 @@
-from rhme import helpers
-from rhme.hme_parser import check_grammar_lex as check_grammar_lex
-from rhme.hme_parser import check_grammar_yacc as check_grammar_yacc
-from rhme.helpers.exceptions import GrammarError, LexicalError, SintaticError
+from mathreader import helpers
+from mathreader.hme_parser import check_grammar_lex as check_grammar_lex
+from mathreader.hme_parser import check_grammar_yacc as check_grammar_yacc
+from mathreader.helpers.exceptions import GrammarError, LexicalError, SintaticError
 import numpy as np
 
 
