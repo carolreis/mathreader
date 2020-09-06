@@ -9,7 +9,7 @@ with open('requirements.txt') as f:
 try:
     setuptools.setup(
         name = 'mathreader',
-        version = '0.13',
+        version = '0.14',
         author = 'Caroline Reis',
         author_email = 'caroline.reis@rede.ulbra.br',
         long_description = long_description,
