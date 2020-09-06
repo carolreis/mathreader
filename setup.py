@@ -11,7 +11,7 @@ try:
         name = 'mathreader',
         version = '0.1',
         author = 'Caroline Reis',
-        author_email = 'caroline.sreis@ulbra.edu.br',
+        author_email = 'caroline.reis@rede.ulbra.br',
         long_description = long_description,
         #long_description_content_type="text/markdown",
         url="https://github.com/carolreis/mathreader",
