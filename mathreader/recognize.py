@@ -60,8 +60,6 @@ class Recognize:
 
                 helpers.debug('... segmentation ...')
                 helpers.debug('... recognize ...')
-                # retirar depois
-                helpers.show_image(s['image'])
 
                 reconhecer = self.__recognize(s['image'])
                 reconhecer['label'] = str(reconhecer['label'])
@@ -72,9 +70,6 @@ class Recognize:
                 symbol_prediction = {
                     'identity': labels[s['label']]
                 }
-
-                # retirar depois
-                print('LABEL: ', labels[s['label']])
 
                 symbol_prediction.update(reconhecer)
                 self.prediction.append(symbol_prediction)
