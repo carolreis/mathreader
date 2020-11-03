@@ -1,7 +1,5 @@
 # MathReader: API for handwritten mathematical expressions recognition
 
-__GitHub:__ [mathreader](https://github.com/carolreis/mathreader)
-
 ## About:
 
 - __Accepted symbols__: 
