@@ -283,7 +283,7 @@ class ImagePreprocessing:
             print(e)
             return None
 
-    def treatment_sem_segment(self, img):
+    def treatment_without_segmentation(self, img):
         try:
             if type(img) is str:
                 image = cv2.imread(img)
@@ -306,7 +306,6 @@ class ImagePreprocessing:
             else:
                 image = img
 
-            original = image.copy()
             image = self.resize_full_image(image)
             normalized = self.normalize(image)
             self.image = normalized.copy()
