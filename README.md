@@ -1,5 +1,7 @@
 # MathReader: API for handwritten mathematical expressions recognition
 
+##Paper: [MathReader: API for handwritten mathematical expressions recognition](https://ieeexplore.ieee.org/document/9288272)
+
 ## About:
 
 - __Accepted symbols__: 
