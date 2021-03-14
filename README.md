@@ -2,6 +2,29 @@
 
 ### Paper: [MathReader: API for handwritten mathematical expressions recognition](https://ieeexplore.ieee.org/document/9288272), published in [2020 IEEE 32nd International Conference on Tools with Artificial Intelligence (ICTAI)](https://ieeexplore.ieee.org/xpl/conhome/9288160/proceeding)
 
+Details about implementation are described in the paper.
+
+------------
+
+
+### Interface for validation:
+
+
+GitHub Project:  [MathReader Validation](https://github.com/carolreis/mathreader-validation)
+
+
+------------
+
+
+### MathReader Neural Network Training
+
+If you want to re-train the neural network model. Feel free to improve it (details about the training process is described in the paper mentioned above).
+
+
+GitHub Project: [MathReader Training](https://github.com/carolreis/mathreader-training)
+
+------------
+
 ## About:
 
 - __Accepted symbols__: 
